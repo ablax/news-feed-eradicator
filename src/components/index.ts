@@ -14,13 +14,8 @@ const NewsFeedEradicator = (store: Store) => {
 	const onShowInfoPanel = () => {
 		store.dispatch({ type: ActionType.UI_OPTIONS_SHOW });
 	};
-
-	const link = h('a.nfe-info-link', { on: { click: onShowInfoPanel } }, [
-		h('span', footerText),
-	]);
-
-	// Entire app component
-	return h('div', [quoteDisplay, link]);
+	
+	return h('div', [quoteDisplay]);
 };
 
 export default NewsFeedEradicator;
