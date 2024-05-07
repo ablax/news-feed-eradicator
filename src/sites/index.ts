@@ -37,8 +37,8 @@ export const Sites: Record<SiteId, Site> = {
 	},
 	instagram: {
 		label: 'Instagram',
-		domain: 'instagram.com',
-		paths: ['/'],
+		domain: 'instagram.com',	
+		paths: ['/', '/explore/', '/reels/', '/reels/*/', '/reels/*'],
 		prefixes: [],
 		origins: ['http://www.instagram.com/*', 'https://www.instagram.com/*'],
 		css: instagramCss,
