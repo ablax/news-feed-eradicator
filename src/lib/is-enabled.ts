@@ -22,8 +22,8 @@ export function enabledStatus(state: SettingsState): EnabledStatus {
 		const siteStatus: SiteStatus = siteStatuses[siteId];
 		if (window.location.host.includes(site.domain)) {
 			// Always disabled if the path doesn't match
-			if (site.paths.indexOf(window.location.pathname) === -1
-			&& site.prefixes.some((prefix) => window.location.pathname.startsWith(prefix)) == false) {
+			let currentPath = '/' + window.location.pathname.split('/')[1]
+			if (site.paths.indexOf(currentPath) === -1) {
 				return { type: 'disabled' };
 			}
 

@@ -19,14 +19,10 @@ export const Sites: Record<SiteId, Site> = {
 		paths: [
 			'/',
 			'/home.php',
-			'/watch/',
-			'/marketplace/',
-			'/groups/feed/',
-			'/gaming/feed/',
-			'/gaming/play/',
-		],
-		prefixes: [
-			'/reel/'
+			'/watch',
+			'/reel',
+			'/marketplace',
+			'/groups'
 		],
 		origins: [
 			'http://www.facebook.com/*',
@@ -38,8 +34,7 @@ export const Sites: Record<SiteId, Site> = {
 	instagram: {
 		label: 'Instagram',
 		domain: 'instagram.com',	
-		paths: ['/', '/explore/', '/reels/', '/reels/*/', '/reels/*'],
-		prefixes: [],
+		paths: ['/', '/explore', '/reels', ''],
 		origins: ['http://www.instagram.com/*', 'https://www.instagram.com/*'],
 		css: instagramCss,
 	},
@@ -47,7 +42,6 @@ export const Sites: Record<SiteId, Site> = {
 		label: 'Twitter/X',
 		domain: 'twitter.com',
 		paths: ['/home', '/compose/tweet'],
-		prefixes: [],
 		origins: [
 			'http://twitter.com/*',
 			'https://twitter.com/*',
@@ -59,15 +53,13 @@ export const Sites: Record<SiteId, Site> = {
 	youtube: {
 		label: 'YouTube',
 		domain: 'youtube.com',
-		paths: ['/', '/feed/trending'],
-		prefixes: [],
+		paths: ['/', '/shorts', '/feed/trending'],
 		origins: ['https://www.youtube.com/*'],
 	},
 	linkedin: {
 		label: 'LinkedIn',
 		domain: 'linkedin.com',
 		paths: ['/', '/feed/'],
-		prefixes: [],
 		origins: ['http://www.linkedin.com/*', 'https://www.linkedin.com/*'],
 	},
 	reddit: {
@@ -83,7 +75,6 @@ export const Sites: Record<SiteId, Site> = {
 				i + 'rising/',
 			])
 			.reduce((i, j) => i.concat(j)),
-		prefixes: [],
 		origins: [
 			'https://www.reddit.com/*',
 			'http://www.reddit.com/*',
@@ -95,14 +86,12 @@ export const Sites: Record<SiteId, Site> = {
 		label: 'Y Combinator News (HN)',
 		domain: 'news.ycombinator.com',
 		paths: ['/', '/news'],
-		prefixes: [],
 		origins: ['https://news.ycombinator.com/*'],
 	},
 	github: {
 		label: 'Github',
 		domain: 'github.com',
 		paths: ['/', '/dashboard'],
-		prefixes: [],
 		origins: ['https://github.com/*'],
 		css: githubCss,
 	},
@@ -120,9 +109,6 @@ export type Site = {
 
 	// Will only be enabled for these paths
 	paths: string[];
-
-	// Will only be enabled for these prefixes
-	prefixes: string[];
 
 	css?: string;
 };

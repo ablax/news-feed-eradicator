@@ -15,11 +15,11 @@ export function eradicate(store: Store) {
 
 		// Don't do anything if the UI hasn't loaded yet
 		const feed = document.querySelector('main');
+
 		if (feed == null) {
 			return;
 		}
 
-		const container = feed;
 
 		// Add News Feed Eradicator quote/info panel
 		if (feed && !isAlreadyInjected()) {

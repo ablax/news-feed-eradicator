@@ -18,22 +18,6 @@ export function eradicate(store: Store) {
 			document.title = 'Facebook';
 		}
 
-		const navibar = 
-			document.querySelector('ul.xuk3077.x78zum5.x1iyjqo2.xl56j7k.x1p8ty84.x1na7pl.x88anuq');
-
-		// console.log(navibar);
-		if (navibar != null && navibar.parentNode != null) {
-			navibar.parentNode.removeChild(navibar);
-		}
-
-		const sidebar = 
-			document.querySelector('div.x78zum5.xdt5ytf.x1iyjqo2.x1us19tq');
-		// console.log(sidebar);
-
-		if (sidebar != null && sidebar.parentNode != null) {
-			sidebar.parentNode.removeChild(sidebar);
-		}
-
 		// Don't do anything if the FB UI hasn't loaded yet
 		const feed =
 			document.querySelector('div.xh8yej3.x1gslohp#watch_feed') || // For watch

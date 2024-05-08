@@ -14,13 +14,15 @@ export function eradicate(store: Store) {
 		}
 
 		// Don't do anything if the UI hasn't loaded yet
-		const feed = document.querySelector('#primary');
+		const feed = document.querySelector('#primary') || document.querySelector("#shorts-inner-container");
 
 		if (feed == null) {
 			return;
 		}
 
 		const container = feed;
+
+		document.querySelectorAll("ytd-reel-video-renderer").forEach((el) => el.remove())
 
 		// Add News Feed Eradicator quote/info panel
 		if (container && !isAlreadyInjected()) {
